@@ -2,11 +2,11 @@
 #n-queen prob
 #대각선 일치->a-b=c-d or a-b=d-c
 #세로줄 일치->b=d
-queen=[]#[i]줄 queen[i]번
+queen=[10]#[i]줄 queen[i]번
 field=[]
 cnt=0
 n=0
-def qp(l) :
+def queen_placement(l) :
 	global queen
 	global cnt
 	flag=0
@@ -26,11 +26,11 @@ def qp(l) :
 				cnt+=1
 				return
 			else :
-				qp(l+1)
+				queen_placement(l+1)
 
 n=input()
 #n-queen solve method start
-
 for i in range(n) :
 	queen[0]=i
-	qp(1)
+	queen_placement(1)
+print cnt
