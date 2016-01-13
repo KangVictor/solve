@@ -3,7 +3,6 @@
 #대각선 일치->a-b=c-d or a-b=d-c
 #세로줄 일치->b=d
 queen=[10]#[i]줄 queen[i]번
-field=[]
 cnt=0
 n=0
 def queen_placement(l) :
