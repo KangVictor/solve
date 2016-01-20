@@ -1,5 +1,5 @@
 #input index of #
-#output max number&it's coordinate
+#output max number&its coordinate
 max=0
 x=-1
 y=-1
@@ -10,5 +10,5 @@ for i in range(9) :
 			x=i
 			y=j
 			max=index[j]
+print max			
 print y+1,x+1
-print max

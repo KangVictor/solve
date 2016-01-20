@@ -16,13 +16,13 @@ def find (x,y,cnt,copy_of_maze) :
 	#find way
 	copy_of_maze[x][y]=0
 	if w-1>y and copy_of_maze[x][y+1]==1 :
-		find(x,y+1,cnt+1)
+		find(x,y+1,cnt+1,copy_of_maze)
 	elif h-1>x and copy_of_maze[x+1][y]==1 :
-		find(x+1,y,cnt+1)
+		find(x+1,y,cnt+1,copy_of_maze)
 	elif y>0 and copy_of_maze[x][y-1]==1 :
-		find(x,y-1,cnt+1)
+		find(x,y-1,cnt+1,copy_of_maze)
 	elif x>0 and copy_of_maze[x-1][y]==1 :
-		find(x-1,y,cnt+1)
+		find(x-1,y,cnt+1,copy_of_maze)
 	copy_of_maze[x][y]=1
 
 #input h, w, maze
@@ -62,8 +62,3 @@ for i in range(h) :
 max=0
 find(start[0],start[1],0,maze)
 print(len(ans))
-# for i in range(len(ans)) :
-# 	print ans[i]
-# 	if(max<ans[i]) :
-# 		max=ans[i]
-# print max
