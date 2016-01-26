@@ -6,9 +6,12 @@ m = 0
 area = []
 
 def GSHS_finder(current_location, cost) :
+	# check if reached the end
+	print current_location, cost
 	if current_location  == n :
 		return cost
 	minimum_cost = 99999
+
 	for i in range (m) :
 		if area[n][0] == current_location :
 			returned_cost = GSHS_finder(area[n][1], cost + area[n][2])
@@ -33,7 +36,8 @@ def execute(file_to_execute) :
 		n = int(basic_input_of_file[0])
 		m = int(basic_input_of_file[1])
 		modified_input_of_file = basic_input_of_file[2:]
-		cnt = 0
+		# print modified_input_of_file
+		# print 
 		index = []
 
 		for i in range(3) :
@@ -42,27 +46,32 @@ def execute(file_to_execute) :
 		#isinstance(modified_input_of_file, int)
 		
 		a = -1
-		for i in range(m) :
+		for i in range(m*3) :
 			a += 1
 			index[a] = modified_input_of_file[i]
-			print a,cnt
-			if cnt%3 == 2 :
+			# print a, i, index[:]
+			if i%3 == 2 :
 				a = -1
-				area.append(index)
-			cnt += 1
+				# print "index numer", len(area)+1, ":"
+				# print index[:]
+				# print 
+				area.append(index[:])
 
 		#this part is for checking if input is currect
-		print 
-		print n, m
-		print 
-		for i in range(m) :
-			for j in range(3) :
-				print area[i][j],
-			print 
+		# print 
+		# print n, m
+		# print 
+		# print area[:]
+		# for i in range(m) :
+		# 	print area[i]
 		#input part end
 
 		#finding starts
-		#print GSHS_finder(1, 0)
+		answer = GSHS_finder(1, 0)
+		if answer == 99999 :
+			print "-1"
+		else :
+			print answer
 
 #input part
 #I'll use file input
